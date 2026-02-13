@@ -10,7 +10,6 @@
   <a href="#"><img src="https://img.shields.io/badge/Status-Production-2ECC71?style=for-the-badge&logo=vercel&logoColor=white" alt="Status"></a>
   <a href="#"><img src="https://img.shields.io/badge/PRs-Welcome-FF6B6B?style=for-the-badge&logo=github&logoColor=white" alt="PRs"></a>
   <a href="#"><img src="https://img.shields.io/badge/4K-Responsive-4169E1?style=for-the-badge&logo=4d&logoColor=white" alt="4K"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Live-Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo"></a>
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/Inter-Font-000000?style=flat-square&logo=googlefonts&logoColor=white" alt="Inter">
