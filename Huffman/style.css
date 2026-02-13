@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at 30% 40%, #0a0c16, #030407);
+    font-family: 'Inter', sans-serif;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ecf5ff;
+}
+
+.dimension-container {
+    max-width: 2000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 🪐 CRYSTAL GLASS CARD – 4K LUMINANCE */
+.crystal-card {
+    background: rgba(8, 15, 28, 0.65);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid rgba(64, 164, 255, 0.28);
+    border-radius: 48px;
+    padding: clamp(1.2rem, 3vw, 2.4rem);
+    box-shadow: 0 40px 70px -20px #000000e0, inset 0 1px 2px rgba(255,255,255,0.08);
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+.crystal-card:hover {
+    border-color: rgba(0, 180, 255, 0.5);
+    background: rgba(12, 22, 40, 0.75);
+    box-shadow: 0 45px 90px -15px #001e66;
+}
+
+/* 🌟 NEON HEADER — responsive flex wrap */
+.quantum-header {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 20px);
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.quantum-header h1 {
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 3rem);
+    background: linear-gradient(145deg, #ffffff, #aad0ff, #6eb0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1.5px;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 25px #0066ff60;
+}
+
+.hologram-badge {
+    background: rgba(0, 200, 255, 0.1);
+    border: 1px solid #00e0ff;
+    border-radius: 100px;
+    padding: 0.35rem 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #b0f0ff;
+    letter-spacing: 2px;
+    backdrop-filter: blur(4px);
+}
+
+/* ✨ DIMENSIONAL INPUT — fully responsive */
+.dimensional-input {
+    width: 100%;
+    background: rgba(3, 7, 19, 0.9);
+    border: 2px solid #2a4c70;
+    border-radius: 36px;
+    padding: clamp(1rem, 2.5vw, 1.8rem) clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    color: #f0f8ff;
+    font-weight: 450;
+    font-family: 'JetBrains Mono', monospace;
+    resize: vertical;
+    box-shadow: inset 0 6px 18px #00000080, 0 0 0 0 #0099ff;
+    transition: 0.25s ease;
+}
+
+.dimensional-input:focus {
+    border-color: #40b0ff;
+    outline: none;
+    background: #071020;
+    box-shadow: inset 0 6px 18px #000, 0 0 0 4px #0099ff30, 0 0 25px #0066ff;
+}
+
+/* 🚀 QUANTUM BUTTONS */
+.quantum-btn {
+    background: linear-gradient(165deg, #1a263b, #0e1525);
+    border: 1px solid #3d6790;
+    border-radius: 50px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    color: #ecf9ff;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 18px #00000060, 0 0 0 0 #40a0ff;
+    transition: 0.2s all cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.quantum-btn i {
+    font-size: 1.2rem;
+    color: #9acdff;
+    filter: drop-shadow(0 0 5px #0066ff);
+}
+
+.quantum-btn:hover {
+    background: #27415e;
+    border-color: #70b8ff;
+    transform: scale(1.04);
+    box-shadow: 0 14px 28px #001c3d, 0 0 18px #0080ff;
+}
+
+.btn-prime {
+    background: linear-gradient(145deg, #2a5a9c, #163a62);
+    border: 1px solid #8cc0ff;
+}
+
+/* 🎚️ FUTURISTIC TOGGLE */
+.toggle-nebula {
+    background: rgba(2, 15, 30, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 70px;
+    padding: 6px;
+    display: inline-flex;
+    border: 1px solid #2f6792;
+    flex-wrap: wrap;
+}
+
+.toggle-neo {
+    padding: 0.6rem 1.5rem;
+    border-radius: 60px;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    color: #bde1ff;
+    transition: 0.25s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.toggle-neo.active {
+    background: #1f4e8c;
+    color: white;
+    box-shadow: 0 0 20px #0055dd;
+}
+
+/* 📊 HOLOGRAPHIC FREQUENCY TABLE */
+.hologram-scroll {
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.hologram-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+.hologram-scroll::-webkit-scrollbar-thumb {
+    background: #2050a0;
+    border-radius: 20px;
+    border: 1px solid #60a0ff;
+}
+
+.freq-holo-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1.2rem;
+    background: rgba(20, 40, 70, 0.3);
+    border-radius: 22px;
+    margin-bottom: 8px;
+    border: 1px solid #2f5580;
+    transition: 0.2s;
+}
+
+.freq-holo-row:hover {
+    background: rgba(48, 100, 180, 0.25);
+    border-color: #70bcff;
+    transform: translateX(6px);
+}
+
+.symbol-glow {
+    background: #142d4e;
+    padding: 0.2rem 1.2rem;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    border: 1px solid #5c9eff;
+}
+
+.freq-pulse {
+    background: #003c6c;
+    padding: 0.2rem 1.2rem;
+    border-radius: 60px;
+    font-weight: 700;
+    color: #e0f0ff;
+    border: 1px solid #90c0ff;
+}
+
+/* 🖼️ CANVAS NEBULA — responsive canvas container */
+.canvas-nebula {
+    background: #030b15;
+    border-radius: 36px;
+    padding: 1.2rem;
+    margin-top: 1.4rem;
+    box-shadow: 0 0 0 1px #2e6090, inset 0 0 30px #001433, 0 18px 40px black;
+    transition: 0.35s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 26px;
+    transition: 0.2s;
+    background: #0a1426; /* deeper base */
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* 🎮 STEP CONTROLLER – CRYO POD — responsive wrap */
+.cryo-pod {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 12, 29, 0.7);
+    backdrop-filter: blur(18px);
+    padding: 0.7rem 1.4rem;
+    border-radius: 80px;
+    border: 1px solid #356f9e;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.step-orb {
+    background: #0a2540;
+    padding: 0.5rem 1.4rem;
+    border-radius: 60px;
+    font-weight: 700;
+    border: 1px solid #6ba5ff;
+    letter-spacing: 2px;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    white-space: nowrap;
+}
+
+/* 📈 BIT-LEVEL COMPRESSION METRICS – RESPONSIVE GRID */
+.bit-matrix {
+    background: #05101e;
+    border-radius: 36px;
+    padding: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+    border: 1px solid #356f9e;
+}
+
+.bit-cell {
+    background: #0d1a2c;
+    padding: 1rem;
+    border-radius: 24px;
+    border: 1px solid #316fb0;
+}
+
+.bit-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    font-weight: 700;
+    color: #b0ecff;
+}
+
+/* ⚡ ENCODER QUANTUM */
+.encoder-quantum {
+    background: linear-gradient(145deg, #0a1424, #030812);
+    border-radius: 60px;
+    padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.binary-stream {
+    background: #0a0f1c;
+    border-radius: 70px;
+    padding: 1.2rem 1.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    border: 1.5px solid #4080d0;
+    color: #d4f4ff;
+    word-break: break-all;
+    box-shadow: 0 0 24px #004c99;
+}
+
+/* 🌐 RESPONSIVE GRID LAYOUTS */
+.responsive-two-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+}
+
+@media (max-width: 1100px) {
+    .responsive-two-col {
+    grid-template-columns: 1fr;
+    }
+    body { padding: 1rem; }
+}
+
+@media (max-width: 600px) {
+    .cryo-pod { flex-direction: column; width: 100%; }
+    .quantum-btn { white-space: normal; }
+    .toggle-neo { padding: 0.5rem 1rem; }
+}
+
+/* animations */
+@keyframes pulse-glow {
+    0% { border-color: #356f9e; }
+    50% { border-color: #80c8ff; box-shadow: 0 0 30px #0066cc; }
+    100% { border-color: #356f9e; }
+}
+.animate-pulse-border { animation: pulse-glow 3s infinite; }
+.slide-quantum { animation: slideQuantum 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes slideQuantum {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
