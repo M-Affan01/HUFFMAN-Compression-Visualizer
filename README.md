@@ -1,5 +1,4 @@
-# 🧬 HUFFMAN·X: Quantum Compression Visualizer
-
+# HUFFMAN·X: Quantum Compression Visualizer
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Version-2.0.0-00E5FF?style=for-the-badge&logo=git&logoColor=white" alt="Version"></a>
@@ -21,7 +20,7 @@
 
 ---
 
-## 📋 **TABLE OF CONTENTS**
+## **TABLE OF CONTENTS**
 
 | Section | Description |
 |---------|-------------|
@@ -41,15 +40,15 @@
 
 ---
 
-## 🚀 **1. PROJECT OVERVIEW**
+## **1. PROJECT OVERVIEW**
 
-### **📌 Short Description**
+### **Short Description**
 > *Enterprise-grade Huffman coding visualization platform featuring real-time tree construction, step-by-step greedy algorithm simulation, and bit-level compression analytics — delivered through a 4K-responsive glass morphism interface.*
 
-### **🎯 Project Type**
+### **Project Type**
 **Web Application** | **Algorithm Visualization** | **Educational Simulation** | **Production-Ready Tool**
 
-### **🎓 Academic & Industry Context**
+### **Academic & Industry Context**
 
 Huffman coding, developed by **David A. Huffman** in 1952 during his PhD at MIT, revolutionized data compression. This greedy algorithm constructs **optimal prefix codes** and remains fundamental to modern computing:
 
@@ -65,9 +64,9 @@ This project serves as both an **educational sandbox** for 50,000+ CS students a
 
 ---
 
-## ⚡ **2. KEY FEATURES**
+## **2. KEY FEATURES**
 
-### **🎯 CORE ALGORITHM ENGINE**
+### **CORE ALGORITHM ENGINE**
 
 | Feature | Implementation | Complexity | Performance |
 |---------|---------------|------------|-------------|
@@ -77,7 +76,7 @@ This project serves as both an **educational sandbox** for 50,000+ CS students a
 | **Prefix Code Generation** | DFS traversal (0-left, 1-right) | O(n) | 50 codes/<2ms |
 | **Step State Management** | Immutable forest snapshots | O(n) memory | 100 steps/<1MB |
 
-### **🎨 VISUALIZATION SUITE**
+### **VISUALIZATION SUITE**
 
 | Component | Technology | Interactive Features | Visual Style |
 |-----------|------------|---------------------|--------------|
@@ -86,7 +85,7 @@ This project serves as both an **educational sandbox** for 50,000+ CS students a
 | **Holographic Tables** | CSS Grid + Flex | Hover bit savings | Glass morphism |
 | **Binary Encoder** | Real-time lookup | Copy-to-clipboard | Pulse animations |
 
-### **🧠 ADVANCED UX CAPABILITIES**
+### **ADVANCED UX CAPABILITIES**
 
 | **Feature** | **Description** | **User Benefit** |
 |------------|-----------------|------------------|
@@ -96,7 +95,7 @@ This project serves as both an **educational sandbox** for 50,000+ CS students a
 | **Responsive Glass Morphism** | Backdrop-filter blur with dynamic border glow | Enterprise visual quality |
 | **4K Canvas Scaling** | Resolution-independent with debounced resize | Perfect on any display |
 
-### **📊 ANALYTICS & REPORTING DASHBOARD**
+### **ANALYTICS & REPORTING DASHBOARD**
 
 | **Metric** | **Calculation** | **Visualization** | **Update Mode** |
 |-----------|----------------|-------------------|-----------------|
@@ -109,9 +108,9 @@ This project serves as both an **educational sandbox** for 50,000+ CS students a
 
 ---
 
-## 🏗 **3. SYSTEM ARCHITECTURE**
+## **3. SYSTEM ARCHITECTURE**
 
-### **🧩 MODULE ARCHITECTURE DIAGRAM**
+### **MODULE ARCHITECTURE DIAGRAM**
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
@@ -162,7 +161,7 @@ This project serves as both an **educational sandbox** for 50,000+ CS students a
 └─────────────────────────┘    └─────────────────────────┘    └─────────────────────┘
 ```
 
-### **🔄 DATA FLOW PIPELINE**
+### **DATA FLOW PIPELINE**
 
 | **Phase** | **Component** | **Input → Output** | **Time Complexity** |
 |-----------|---------------|-------------------|---------------------|
@@ -176,7 +175,7 @@ This project serves as both an **educational sandbox** for 50,000+ CS students a
 | **8. Render** | Canvas | Nodes → Visual tree | O(n) draw calls |
 | **9. Update** | DOM | State → HTML tables | O(n) elements |
 
-### **💾 STATE MANAGEMENT DESIGN**
+### **STATE MANAGEMENT DESIGN**
 
 ```javascript
 // Core state architecture pattern
@@ -209,9 +208,9 @@ const state = {
 
 ---
 
-## 💻 **4. TECHNOLOGY STACK**
+## **4. TECHNOLOGY STACK**
 
-### **📌 CORE TECHNOLOGIES**
+### **CORE TECHNOLOGIES**
 
 | **Layer** | **Technology** | **Version** | **Purpose** | **Justification** |
 |-----------|---------------|-------------|-------------|-------------------|
@@ -222,7 +221,7 @@ const state = {
 | **Icons** | Font Awesome 6 | 6.0.0-beta3 | UI enhancement | 1,600+ premium icons, retina ready |
 | **Typography** | Google Fonts | API v2 | Typography | Inter (UI), JetBrains Mono (code), Orbitron (headers) |
 
-### **📊 DEVELOPMENT TOOLS**
+### **DEVELOPMENT TOOLS**
 
 | **Category** | **Tool** | **Version** | **Usage** |
 |-------------|---------|-------------|-----------|
@@ -233,7 +232,7 @@ const state = {
 | **Local Server** | http-server | 14.0+ | Development testing |
 | **Browser DevTools** | Chrome/Firefox | Latest | Debugging, profiling |
 
-### **📈 VERSION MATRIX**
+### **VERSION MATRIX**
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
@@ -250,60 +249,60 @@ const state = {
 
 ---
 
-## 📁 **5. PROJECT STRUCTURE**
+## **5. PROJECT STRUCTURE**
 
 ```
 HUFFMAN-X/
 │
-├── 📄 index.html                    # ENTRY POINT (120 lines)
-│   ├── 🏷️ Semantic HTML5 doctype
-│   ├── 📱 Responsive viewport meta
-│   ├── 🔗 Font Awesome 6 CDN
-│   ├── 🔗 Google Fonts (Inter, JetBrains Mono, Orbitron)
-│   ├── 🎨 style.css link
-│   ├── 🧠 DOM Structure:
-│   │   ├── 🧊 Crystal Card Header
-│   │   ├── 📝 Dimensional Input
-│   │   ├── 🎚️ Toggle Nebula (Char/Word)
-│   │   ├── 📊 Frequency Spectrum
-│   │   ├── 🌲 Tree Canvas (800×380)
-│   │   ├── 🎮 Cryo Step Controller
-│   │   ├── 📉 Bit Matrix Dashboard
-│   │   └── 🔐 Binary Encoder
-│   └── 📜 script.js link
+├── index.html                    # ENTRY POINT (120 lines)
+│   ├── Semantic HTML5 doctype
+│   ├── Responsive viewport meta
+│   ├── Font Awesome 6 CDN
+│   ├── Google Fonts (Inter, JetBrains Mono, Orbitron)
+│   ├── style.css link
+│   ├── DOM Structure:
+│   │   ├── Crystal Card Header
+│   │   ├── Dimensional Input
+│   │   ├── Toggle Nebula (Char/Word)
+│   │   ├── Frequency Spectrum
+│   │   ├── Tree Canvas (800×380)
+│   │   ├── Cryo Step Controller
+│   │   ├── Bit Matrix Dashboard
+│   │   └── Binary Encoder
+│   └── script.js link
 │
-├── 📄 style.css                     # STYLING SYSTEM (320 lines)
-│   ├── 🎯 CSS Reset & Box Sizing
-│   ├── 🌌 Radial Gradient Background
-│   ├── 🧊 Crystal Card Component
+├── style.css                     # STYLING SYSTEM (320 lines)
+│   ├── CSS Reset & Box Sizing
+│   ├── Radial Gradient Background
+│   ├── Crystal Card Component
 │   │   ├── backdrop-filter: blur(20px)
 │   │   ├── border-radius: 48px
 │   │   └── hover: border-glow
-│   ├── 📐 Responsive Grid System
+│   ├── Responsive Grid System
 │   │   ├── .responsive-two-col
 │   │   └── media queries (1100px, 600px)
-│   ├── 🎚️ Quantum Button System
+│   ├── Quantum Button System
 │   │   ├── .quantum-btn
 │   │   ├── .btn-prime
 │   │   └── .toggle-nebula
-│   ├── 📊 Holographic Components
+│   ├── Holographic Components
 │   │   ├── .freq-holo-row
 │   │   ├── .hologram-scroll
 │   │   └── .cryo-pod
-│   ├── 📈 Bit Matrix Grid
+│   ├── Bit Matrix Grid
 │   │   └── grid-template-columns: repeat(auto-fit, minmax(160px,1fr))
-│   └── 🎬 Animations
+│   └── Animations
 │       ├── @keyframes pulse-glow
 │       └── .slide-quantum
 │
-├── 📄 script.js                     # ENGINE CORE (480 lines)
-│   ├── 🧮 HuffNode Class
+├── script.js                     # ENGINE CORE (480 lines)
+│   ├── HuffNode Class
 │   │   ├── constructor(symbol, freq, left, right)
 │   │   └── isLeaf()
 
 ```
 
-### **📊 FILE METRICS**
+### **FILE METRICS**
 
 | **File** | **Lines** | **Functions** | **Classes** | **Event Listeners** | **Complexity** |
 |---------|-----------|---------------|-------------|---------------------|----------------|
@@ -314,9 +313,9 @@ HUFFMAN-X/
 
 ---
 
-## ⚡ **6. QUICK START**
+## **6. QUICK START**
 
-### **🚦 ZERO-CONFIG INSTALLATION (30 SECONDS)**
+### **ZERO-CONFIG INSTALLATION (30 SECONDS)**
 
 ```bash
 # 1. Clone repository
@@ -339,7 +338,7 @@ php -S localhost:3000       # PHP
 # → Console: "HUFFMAN·X initialized"
 ```
 
-### **✅ SYSTEM REQUIREMENTS**
+### **SYSTEM REQUIREMENTS**
 
 | **Requirement** | **Minimum** | **Recommended** | **Notes** |
 |----------------|-------------|-----------------|-----------|
@@ -349,7 +348,7 @@ php -S localhost:3000       # PHP
 | **Internet** | Optional | Required | For CDN fonts only |
 | **RAM** | 512MB | 2GB+ | Smooth 60fps rendering |
 
-### **📦 NPM INSTALLATION (COMING SOON)**
+### **NPM INSTALLATION (COMING SOON)**
 
 ```bash
 npm install huffman-x
@@ -357,11 +356,11 @@ npm install huffman-x
 
 ---
 
-## 📖 **7. USAGE GUIDE**
+## **7. USAGE GUIDE**
 
-### **🎯 COMPLETE WORKFLOW EXAMPLE**
+### **COMPLETE WORKFLOW EXAMPLE**
 
-#### **📝 STEP 1: Enter Source Text**
+#### **STEP 1: Enter Source Text**
 
 **Default Corpus:**
 ```
@@ -380,12 +379,12 @@ huffman greedy algorithm binary tree compression prefix code
 
 ---
 
-#### **🎚️ STEP 2: Select Analysis Mode**
+#### **STEP 2: Select Analysis Mode**
 
 | **Mode** | **Action** | **Result** |
 |---------|-----------|-----------|
-| **Character** | Click `🖱️ Character` | Analyzes 't', 'o', 'b', 'e', etc. |
-| **Word** | Click `📄 Word` | Analyzes 'to', 'be', 'or', etc. |
+| **Character** | Click `Character` | Analyzes 't', 'o', 'b', 'e', etc. |
+| **Word** | Click `Word` | Analyzes 'to', 'be', 'or', etc. |
 
 **Character Mode Output:**
 ```
@@ -403,25 +402,25 @@ Symbol: 'or' | Freq: 1 | Code: 110
 
 ---
 
-#### **⚡ STEP 3: Process & Analyze**
+#### **STEP 3: Process & Analyze**
 
-Click **`🔬 COMPILE`** button or press `Ctrl+Enter`
+Click **`COMPILE`** button or press `Ctrl+Enter`
 
 **Immediate Visual Feedback:**
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  ✅ FREQUENCY SPECTRUM UPDATED                          │
+│  FREQUENCY SPECTRUM UPDATED                             │
 │  ├── 7 unique symbols detected                          │
 │  ├── Max frequency: neo (4)                             │
 │  └── Min frequency: tank (1)                            │
 │                                                         │
-│  ✅ HUFFMAN TREE CONSTRUCTED                            │
+│  HUFFMAN TREE CONSTRUCTED                               │
 │  ├── 6 merge operations                                 │
 │  ├── 13 total nodes                                     │
 │  └── Root frequency: 13                                 │
 │                                                         │
-│  ✅ COMPRESSION METRICS                                 |  
+│  COMPRESSION METRICS                                    |  
 │  ├── Original: 104 bits (13 symbols × 8)                │
 │  ├── Compressed: 38 bits                                │
 │  └── Savings: 66 bits (63.46%)                          │
@@ -430,7 +429,7 @@ Click **`🔬 COMPILE`** button or press `Ctrl+Enter`
 
 ---
 
-#### **🌲 STEP 4: Navigate Tree Construction**
+#### **STEP 4: Navigate Tree Construction**
 
 **Using Step Controller:**
 
@@ -454,12 +453,12 @@ Step 7/7: [ROOT:13]
 
 ---
 
-#### **📊 STEP 5: Analyze Compression Metrics**
+#### **STEP 5: Analyze Compression Metrics**
 
 **Bit Matrix Dashboard:**
 ```
 ┌────────────────────────────────────────────────────────┐
-│  📉 QUANTUM COMPRESSION METRICS                        │
+│  QUANTUM COMPRESSION METRICS                        │
 ├──────────────┬───────────────┬──────────────┬─────────┤
 │ Original Bits│ Huffman Bits  │ Saved Bits   │ Ratio   │
 │   104 bits   │   38 bits     │ +66 bits     │ 36.54%  │
@@ -469,60 +468,60 @@ Step 7/7: [ROOT:13]
 **Per-Symbol Analysis (Hover on any row):**
 
 ```
-🔍 SYMBOL: "neo" | FREQ: 4 | HUFFMAN: 0
+SYMBOL: "neo" | FREQ: 4 | HUFFMAN: 0
    ORIG: 32 bits | COMP: 4 bits | SAVED: 28 bits
    COMPRESSION: 12.5% of original
-   ⭐ BEST SAVINGS IN TREE
+   BEST SAVINGS IN TREE
 ```
 
 ---
 
-#### **🔐 STEP 6: Encode Symbols**
+#### **STEP 6: Encode Symbols**
 
 **Interactive Binary Encoder:**
 
 ```javascript
 // Input: "neo"
-// Output: 🟢 HUFFMAN: 0 (1 bit)
+// Output: HUFFMAN: 0 (1 bit)
 // Original: 8 bits | Saved: 7 bits | Ratio: 12.5%
 
 // Input: "morpheus"  
-// Output: 🟢 HUFFMAN: 10 (2 bits)
+// Output: HUFFMAN: 10 (2 bits)
 // Original: 8 bits | Saved: 6 bits | Ratio: 25.0%
 
 // Input: "tank"
-// Output: 🟢 HUFFMAN: 1100 (4 bits)  
+// Output: HUFFMAN: 1100 (4 bits)  
 // Original: 8 bits | Saved: 4 bits | Ratio: 50.0%
 ```
 
 **Copy Feature:**
-- Click `📋` button
-- `alert('📋 binary copied')`
+- Click button
+- `alert('binary copied')`
 - Paste anywhere: `HUFFMAN: 0`
 
 ---
 
-### **🎮 ADVANCED USE CASES**
+### **ADVANCED USE CASES**
 
-#### **📈 Large Corpus Analysis (10,000+ chars)**
+#### **Large Corpus Analysis (10,000+ chars)**
 
 ```javascript
 // Paste War and Peace excerpt
 // System handles gracefully:
-✅ Parse time: 18ms
-✅ Tree build: 32ms  
-✅ Render: 24ms
-✅ Memory: ~12MB
+Parse time: 18ms
+Tree build: 32ms  
+Render: 24ms
+Memory: ~12MB
 ```
 
-#### **🔄 Mode Switching Mid-Analysis**
+#### **Mode Switching Mid-Analysis**
 
 1. Start with **Character Mode** → See letter frequencies
-2. Switch to **Word Mode** → Click `📄 Word`
-3. Click `🔬 COMPILE` → Complete tree rebuild
+2. Switch to **Word Mode** → Click `Word`
+3. Click `COMPILE` → Complete tree rebuild
 4. Previous step history cleared, new tree generated
 
-#### **📱 Mobile Responsive Testing**
+#### **Mobile Responsive Testing**
 
 | **Device** | **Orientation** | **Layout** | **Canvas Scaling** |
 |-----------|-----------------|------------|-------------------|
@@ -532,9 +531,9 @@ Step 7/7: [ROOT:13]
 
 ---
 
-## 📈 **8. PERFORMANCE METRICS**
+## **8. PERFORMANCE METRICS**
 
-### **⏱️ BENCHMARK SUITE**
+### **BENCHMARK SUITE**
 
 Test Environment: Chrome 120, MacBook Pro M3, 16GB RAM
 
@@ -546,7 +545,7 @@ Test Environment: Chrome 120, MacBook Pro M3, 16GB RAM
 | 10,000 chars | 16.7 | 31.5 | 19.4 | 67.6 | 12.4 |
 | 50,000 chars | 78.3 | 142.6 | 41.2 | 262.1 | 28.7 |
 
-### **🚀 OPTIMIZATION TECHNIQUES**
+### **OPTIMIZATION TECHNIQUES**
 
 | **Technique** | **Implementation** | **Improvement** | **Trade-off** |
 |--------------|-------------------|-----------------|---------------|
@@ -557,7 +556,7 @@ Test Environment: Chrome 120, MacBook Pro M3, 16GB RAM
 | **Lazy Code Generation** | Generate on demand | 30% faster init | First-use latency |
 | **CSS Hardware Acceleration** | `backdrop-filter`, `transform` | 60fps animations | GPU memory |
 
-### **📊 CANVAS RENDERING PERFORMANCE**
+### **CANVAS RENDERING PERFORMANCE**
 
 | **Canvas** | **Dimensions** | **Draw Calls** | **Frame Time** | **FPS** |
 |-----------|---------------|----------------|----------------|---------|
@@ -565,7 +564,7 @@ Test Environment: Chrome 120, MacBook Pro M3, 16GB RAM
 | Bar Canvas | 550×160 | 1-9 bars | 1-2ms | 120+ |
 | **Combined** | - | - | 5-10ms | 100+ |
 
-### **📱 RESPONSIVE PERFORMANCE MATRIX**
+### **RESPONSIVE PERFORMANCE MATRIX**
 
 | **Device** | **Resolution** | **Pixel Ratio** | **Canvas Scale** | **Render Time** | **FPS** |
 |-----------|---------------|-----------------|------------------|-----------------|---------|
@@ -577,9 +576,9 @@ Test Environment: Chrome 120, MacBook Pro M3, 16GB RAM
 
 ---
 
-## 🛠️ **9. DEVELOPMENT SETUP**
+## **9. DEVELOPMENT SETUP**
 
-### **📋 PREREQUISITES**
+### **PREREQUISITES**
 
 ```bash
 # Required
@@ -596,7 +595,7 @@ VS Code with extensions:
 - Markdown All in One
 ```
 
-### **🔧 ENVIRONMENT CONFIGURATION**
+### **ENVIRONMENT CONFIGURATION**
 
 ```bash
 # 1. Clone with SSH (recommended)
@@ -655,12 +654,12 @@ cat > .eslintrc.json << 'EOF'
 EOF
 ```
 
-### **📜 CODING STANDARDS**
+### **CODING STANDARDS**
 
 #### **JavaScript Style Guide**
 
 ```javascript
-// ✅ CORRECT
+// CORRECT
 class HuffNode {
   constructor(symbol, freq, left = null, right = null) {
     this.symbol = symbol;
@@ -674,7 +673,7 @@ class HuffNode {
   }
 }
 
-// ❌ INCORRECT
+// INCORRECT
 class huffnode {
   constructor(Symbol, Freq, Left, Right) {
     this.symbol = Symbol;
@@ -688,7 +687,7 @@ class huffnode {
 #### **CSS Naming Convention (BEM-inspired)**
 
 ```css
-/* ✅ CORRECT */
+/* CORRECT */
 .crystal-card {}
 .crystal-card__header {}
 .crystal-card__content {}
@@ -698,13 +697,13 @@ class huffnode {
 .freq-holo-row__symbol {}
 .freq-holo-row__value {}
 
-/* ❌ INCORRECT */
+/* INCORRECT */
 .CrystalCard {}
 .cardHeader {}
 .freqRow {}
 ```
 
-### **🧪 TESTING STRATEGY**
+### **TESTING STRATEGY**
 
 ```javascript
 // tests/huffman.test.js
@@ -726,7 +725,7 @@ describe('Huffman Tree Construction', () => {
 });
 ```
 
-### **🚀 DEVELOPMENT WORKFLOW**
+### **DEVELOPMENT WORKFLOW**
 
 ```bash
 # 1. Create feature branch
@@ -760,23 +759,23 @@ git push origin feature/enhanced-animation
 
 ---
 
-## 🤝 **10. CONTRIBUTING**
+## **10. CONTRIBUTING**
 
-### **📋 CONTRIBUTION GUIDELINES**
+### **CONTRIBUTION GUIDELINES**
 
 We welcome contributions from developers of all skill levels! Follow this process:
 
-### **🔍 STEP 1: Find or Create Issue**
+### **STEP 1: Find or Create Issue**
 
 | **Issue Type** | **Label** | **Description** |
 |---------------|----------|-----------------|
-| Bug Report | `🐛 bug` | Unexpected behavior, crash, visual glitch |
-| Feature Request | `✨ enhancement` | New functionality, UX improvement |
-| Documentation | `📚 documentation` | README, comments, guides |
-| Performance | `⚡ performance` | Speed optimization, memory reduction |
-| Testing | `🧪 test` | Unit tests, integration tests |
+| Bug Report | `bug` | Unexpected behavior, crash, visual glitch |
+| Feature Request | `enhancement` | New functionality, UX improvement |
+| Documentation | `documentation` | README, comments, guides |
+| Performance | `performance` | Speed optimization, memory reduction |
+| Testing | `test` | Unit tests, integration tests |
 
-### **🔄 STEP 2: Development Lifecycle**
+### **STEP 2: Development Lifecycle**
 
 ```bash
 # Fork repository on GitHub
@@ -796,7 +795,7 @@ git merge upstream/main
 git checkout -b feature/your-feature-name
 ```
 
-### **📝 STEP 3: Commit Convention**
+### **STEP 3: Commit Convention**
 
 We enforce **Conventional Commits** specification:
 
@@ -811,7 +810,7 @@ We enforce **Conventional Commits** specification:
 | `test` | Tests | Add/update tests | `test: add freq map test cases` |
 | `chore` | Config | Build process, tools | `chore: update eslint config` |
 
-### **🎯 STEP 4: Pull Request Process**
+### **STEP 4: Pull Request Process**
 
 ```bash
 # Before PR: Ensure all checks pass
@@ -831,7 +830,7 @@ git push origin feature/your-feature-name
 # Request review from maintainers
 ```
 
-### **✅ PR Requirements**
+### **PR Requirements**
 
 - [ ] Code follows style guide (Prettier/ESLint)
 - [ ] Tests added/passed (if applicable)
@@ -842,9 +841,9 @@ git push origin feature/your-feature-name
 
 ---
 
-## 📚 **11. ACADEMIC CONTEXT & RESOURCES**
+## **11. ACADEMIC CONTEXT & RESOURCES**
 
-### **🧮 INFORMATION THEORY FOUNDATIONS**
+### **INFORMATION THEORY FOUNDATIONS**
 
 **Shannon's Source Coding Theorem:**
 > The optimal compression ratio is bounded by the entropy H(S):
@@ -853,7 +852,7 @@ git push origin feature/your-feature-name
 > 
 > Huffman coding achieves **H(S) ≤ L < H(S) + 1**, where L is average code length.
 
-### **📊 ENTROPY CALCULATION EXAMPLE**
+### **ENTROPY CALCULATION EXAMPLE**
 
 Default corpus: "neo morpheus neo trinity neo morpheus tank morpheus neo"
 
@@ -869,7 +868,7 @@ Default corpus: "neo morpheus neo trinity neo morpheus tank morpheus neo"
 **Huffman L = 1.923 bits/symbol**  
 **Efficiency = H/L = 81.7%**
 
-### **🎓 COURSE CURRICULUM INTEGRATION**
+### **COURSE CURRICULUM INTEGRATION**
 
 This project is used in:
 
@@ -880,7 +879,7 @@ This project is used in:
 
 ---
 
-### **🚀 LONG-TERM VISION**
+### **LONG-TERM VISION**
 
 ```
 2024: Educational Platform → Interactive algorithm sandbox
@@ -890,7 +889,7 @@ This project is used in:
 
 ---
 
-## 📄 **13. LICENSE**
+## **13. LICENSE**
 
 ### **MIT LICENSE**
 
@@ -916,7 +915,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### **📊 COMPLIANCE & ATTRIBUTIONS**
+### **COMPLIANCE & ATTRIBUTIONS**
 
 | **Component** | **License** | **Attribution** |
 |--------------|------------|-----------------|
@@ -926,24 +925,26 @@ SOFTWARE.
 
 ---
 
-## 📬 **14. CONTACT & SUPPORT**
-
-### **📧 OFFICIAL CONTACT**
-
-
- **Name:**    Muhammad Affan                               
- **Focus:**   Algorithm Core                               
- **GitHub:**  https://github.com/M-Affan01                 
- **Email:**   maffan2830@gmail.com                  
- **LinkedIn:** https://www.linkedin.com/in/affan-nexor-66abb8321/          
- 
-
+## **14. CONTACT & SUPPORT**
+### **OFFICIAL CONTACT**
+ - **Name:**    Muhammad Affan                               
+ - **Focus:**   Algorithm Core                               
+ - **GitHub:**  https://github.com/M-Affan01                 
+ - **Email:**   maffan2830@gmail.com                  
+ - **LinkedIn:** https://www.linkedin.com/in/affan-nexor-66abb8321/          
+---
+## Acknowledgments
+Special thanks to:
+*  **Dr. Adnan Ahmed Siddiqui PHD(IT)** for architectural guidance
+*  Class of 2025 for diverse strategy implementations
+*  Open Source Community for amazing libraries
+---
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,4,6,8,10,12,14,16,18,20&height=200&section=footer&text=HUFFMAN·X&fontSize=60&fontAlignY=75&fontColor=00E5FF&animation=twinkling" width="100%"/>
 </p>
 
 <p align="center">
-  <strong>⚡ Built with greedy algorithms and quantum enthusiasm ⚡</strong>
+  <strong>Built with greedy algorithms and quantum enthusiasm ⚡</strong>
   <br>
   <sub>MIT Licensed · Free for educational and commercial use</sub>
 </p>
