@@ -1,163 +1,413 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-  <title>HUFFMAN · 4K QUANTUM COMPRESSION LAB · RESPONSIVE</title>
-  <!-- Font Awesome 6 (premium icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Font: Inter + JetBrains Mono + Orbitron for future vibes -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuffmanX</title>
+
+  <!-- Tailwind CSS & DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --accent: #10b981;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0f172a;
+      /* Brighter Slate Blue for clarity */
+      overflow: hidden;
+      color: #f1f5f9;
+      /* High-contrast white */
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* 🧪 Dashboard Balance & Glassmorphism */
+    .glass-sidebar {
+      background: rgba(15, 23, 42, 0.7);
+      /* Brighter/More Opaque */
+      backdrop-filter: blur(16px);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .premium-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ✨ Premium Hover Shine & Gloss */
+    .shine-hover {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine-hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right,
+          transparent,
+          rgba(255, 255, 255, 0.15),
+          transparent);
+      transform: skewX(-25deg);
+      transition: 0.75s;
+      pointer-events: none;
+    }
+
+    .shine-hover:hover::before {
+      left: 150%;
+    }
+
+    .premium-card:hover {
+      border-color: rgba(59, 130, 246, 0.6);
+      background: rgba(51, 65, 85, 0.8);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* ✨ Animated Icons & Elements */
+    @keyframes pulse-soft {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes scan-line {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-pulse-soft {
+      animation: pulse-soft 3s infinite ease-in-out;
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 12s infinite linear;
+    }
+
+    .icon-hover-bounce:hover i {
+      animation: bounce 0.5s ease-in-out;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+
+    .scanning-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, transparent, rgba(59, 130, 246, 0.1), transparent);
+      animation: scan-line 4s infinite linear;
+      pointer-events: none;
+    }
+
+    /* 🕹️ High-Tech Command Pod */
+    .command-pod {
+      background: rgba(15, 23, 42, 0.95) !important;
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-command {
+      background: linear-gradient(to bottom, rgba(59, 130, 246, 0.15), transparent);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+      color: #fff;
+    }
+
+    .btn-command:hover {
+      background: rgba(59, 130, 246, 0.3);
+      border-color: rgba(59, 130, 246, 0.6);
+    }
+
+    .btn-auto-run {
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      border: none;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 1px;
+      box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-auto-run:hover {
+      box-shadow: 0 0 25px rgba(124, 58, 237, 0.6);
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+
+    .btn-auto-run.btn-active {
+      background: #ef4444;
+      box-shadow: 0 0 25px rgba(239, 68, 68, 0.6);
+    }
+
+    /* 🌳 Tree Visualizer Aesthetics */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(59, 130, 246, 0.3);
+      border-radius: 10px;
+    }
+
+    .btn-premium {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      border: none;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-premium:hover {
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
-<body>
-  <div class="dimension-container">
-    <!--  HYPER HEADER -->
-    <div class="crystal-card" style="margin-bottom: 30px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-        <div class="quantum-header">
-          <i class="fas fa-bolt" style="font-size: clamp(2rem, 5vw, 2.8rem); color: #aadcff; filter: drop-shadow(0 0 12px #0077ff);"></i>
-          <h1>HUFFMAN·X</h1>
-          <span class="hologram-badge"><i class="fas fa-atom"></i> QUANTUM DSA</span>
-        </div>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <span style="background: #102433; padding: 0.6rem 1.6rem; border-radius: 40px; border:1px solid #4e86b0;">
-            <i class="fas fa-chart-line"></i> GREEDY · O(n log n)
-          </span>
+
+<body class="h-screen flex flex-col">
+
+  <!-- 🛸 NAVIGATION BAR -->
+  <header class="navbar h-16 border-b border-white/10 px-8 flex-none glass-sidebar shine-hover">
+    <div class="flex-1 flex items-center gap-4">
+      <div class="p-2 bg-primary/20 rounded-xl animate-pulse-soft">
+        <i data-lucide="cpu" class="w-6 h-6 text-primary"></i>
+      </div>
+      <div>
+        <h1 class="text-xl font-black tracking-tighter text-white">HUFFMAN<span class="text-primary">X</span></h1>
+        <div id="treeStateMsg"
+          class="flex items-center gap-2 text-[9px] font-bold text-slate-200 uppercase tracking-widest mt-0.5">
+          <span class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span> NEXUS ONLINE
         </div>
       </div>
     </div>
-
-    <!--  SECTION 1 – TEXT INPUT + PREMIUM TOGGLE -->
-    <div class="crystal-card slide-quantum" style="margin-bottom: 30px;">
-      <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;">
-        <i class="fas fa-cube" style="font-size: 1.8rem; color: #7ac4ff;"></i>
-        <h3 style="font-weight: 650; font-size: clamp(1.3rem, 3vw, 1.7rem); letter-spacing: -0.5px;">source dimension</h3>
+    <div class="flex-none gap-6">
+      <div class="flex items-center gap-2 text-[10px] font-bold text-slate-200 uppercase">
+        <i data-lucide="crosshair" class="w-3 h-3 text-primary animate-spin-slow"></i> Precision Mode Active
       </div>
-
-      <textarea id="inputText" class="dimensional-input" rows="3">neo morpheus neo trinity neo morpheus tank morpheus neo</textarea>
-
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 24px; gap: 20px;">
-        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-          <div class="toggle-nebula">
-            <button id="modeChar" class="toggle-neo active"><i class="fas fa-i-cursor"></i> Character</button>
-            <button id="modeWord" class="toggle-neo"><i class="fas fa-file-lines"></i> Word</button>
-          </div>
-          <button id="processBtn" class="quantum-btn btn-prime"><i class="fas fa-microchip"></i> COMPILE</button>
-          <button id="clearBtn" class="quantum-btn"><i class="fas fa-broom"></i> PURGE</button>
-        </div>
-        <div style="background: #0b1a2b; padding: 0.7rem 1.8rem; border-radius: 60px;">
-          <i class="fas fa-char"></i> <span id="charWordCounter" style="font-weight: 600;">chars: 0 | words: 0</span>
-        </div>
-      </div>
+      <button id="processBtn" class="btn btn-sm btn-premium rounded-xl px-6 gap-2 text-white font-bold shine-hover">
+        <i data-lucide="zap" class="w-3 h-3 animate-pulse"></i> ANALYZE STREAM
+      </button>
     </div>
+  </header>
 
-    <!-- ========== QUANTUM GRID: FREQ + TREE ========= -->
-    <div class="responsive-two-col" style="margin-bottom: 30px;">
-      <!--  HOLOGRAPHIC FREQUENCY + BAR CHART + BIT DETAILS -->
-      <div class="crystal-card" style="padding: clamp(1.2rem, 2.5vw, 1.8rem);">
-        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap;">
-          <i class="fas fa-chart-simple" style="color: #70d0ff; font-size: 1.8rem;"></i>
-          <h3 style="font-weight: 700;">frequency spectrum</h3>
-          <span id="uniqueCount" style="background: #003259; padding: 0.3rem 1.2rem; border-radius: 60px;">unique: 0</span>
-        </div>
-        <!-- FREQ TABLE -->
-        <div id="freqTableContainer" class="hologram-scroll" style="margin-bottom: 20px;">
-          <div style="padding: 1.5rem; text-align: center; color: #87b9e5;">🌀 awaiting corpus...</div>
-        </div>
-        <!-- BAR CANVAS -->
-        <div class="canvas-nebula" style="padding: 0.8rem;">
-          <canvas id="freqBarCanvas" width="550" height="160" style="width:100%; height:auto; max-height:160px;"></canvas>
-        </div>
-        
-        <!-- BIT ANALYSIS PER SYMBOL (LIVE) -->
-        <div style="margin-top: 24px; background: #0b1a2e; border-radius: 28px; padding: 1.2rem;">
-          <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 14px; flex-wrap: wrap;">
-            <i class="fas fa-binary"></i>
-            <span style="font-weight: 700;">🔢 BIT COST ANALYSIS</span>
+  <!-- 🏗️ DASHBOARD WORKSPACE -->
+  <main class="flex-1 overflow-hidden grid grid-cols-12 gap-px bg-white/10">
+
+    <!-- 📥 LEFT PANEL: DATA INGESTION -->
+    <aside class="col-span-3 glass-sidebar border-r border-white/10 flex flex-col overflow-hidden">
+      <div class="p-6 flex-1 flex flex-col space-y-6 overflow-y-auto custom-scrollbar">
+        <!-- Source Corpus -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <label class="flex items-center gap-2 text-[10px] font-black text-slate-300 uppercase tracking-widest">
+              <i data-lucide="database" class="w-3 h-3 text-primary"></i> Source Corpus
+            </label>
+            <button id="clearBtn"
+              class="btn btn-xs btn-ghost gap-1 px-2 text-[9px] font-bold text-slate-300 hover:text-white hover:bg-white/5">
+              <i data-lucide="refresh-cw" class="w-2.5 h-2.5"></i> RESET
+            </button>
           </div>
-          <div id="bitAnalysisContainer" style="max-height: 150px; overflow-y: auto; font-family: 'JetBrains Mono'; font-size: 0.85rem;">
-            <!-- dynamic bit analysis rows -->
+          <div class="relative group scanning-bg rounded-2xl overflow-hidden border border-white/10 shine-hover">
+            <textarea id="inputText"
+              class="textarea w-full h-64 bg-slate-900/60 font-mono text-xs leading-relaxed focus:outline-none focus:ring-1 focus:ring-primary/40 p-4 border-none text-white"
+              placeholder="Paste binary or text corpus...">The quick brown fox jumps over the lazy dog. Huffman coding is an optimal prefix code used for lossless data compression.</textarea>
+          </div>
+        </div>
+
+        <div class="divider opacity-10"></div>
+
+        <!-- Quick Cipher -->
+        <div class="space-y-4">
+          <label class="flex items-center gap-2 text-[10px] font-black text-slate-300 uppercase tracking-widest">
+            <i data-lucide="fingerprint" class="w-3 h-3 text-primary"></i> Real-time Cipher
+          </label>
+          <div class="join w-full">
+            <input type="text" id="encodeInput"
+              class="input input-sm join-item flex-1 bg-slate-900 border-white/10 focus:border-primary/50 text-xs font-bold text-white"
+              placeholder="Target symbol...">
+            <button id="encodeBtn" class="btn btn-sm btn-primary join-item px-4" title="Encode Symbol"><i
+                data-lucide="terminal" class="w-4 h-4 text-white"></i></button>
+            <button id="copyBtn" class="btn btn-sm join-item bg-slate-900 border-white/10 text-white"
+              title="Copy Output"><i data-lucide="copy" class="w-3.5 h-3.5"></i></button>
+          </div>
+          <div id="binaryOutput"
+            class="p-4 bg-slate-950/80 rounded-2xl font-mono text-xs text-primary border border-white/10 min-h-[4rem] flex items-center break-all shadow-inner relative overflow-hidden italic text-center justify-center shine-hover font-bold">
+            _ binary_stream_idle _
           </div>
         </div>
       </div>
+    </aside>
 
-      <!--  TREE VISUALIZER + STEP CONTROLS — VIBRANT COLORS + BIG FREQ NUMBERS -->
-      <div class="crystal-card" style="padding: clamp(1.2rem, 2.5vw, 1.8rem);">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          <div style="display: flex; gap: 14px;">
-            <i class="fas fa-diagram-project" style="color: #80f0ff; font-size: 1.8rem;"></i>
-            <h3 style="font-weight: 700;">huffman tree·nexus</h3>
-          </div>
-          <!-- CRYO STEP POD -->
-          <div class="cryo-pod">
-            <button id="resetStepBtn" class="quantum-btn" style="padding: 0.5rem 1.2rem;"><i class="fas fa-rotate-left"></i></button>
-            <button id="prevStepBtn" class="quantum-btn" style="padding: 0.5rem 1.2rem;"><i class="fas fa-backward-step"></i></button>
-            <span id="stepIndicator" class="step-orb">0/0</span>
-            <button id="nextStepBtn" class="quantum-btn" style="padding: 0.5rem 1.2rem;"><i class="fas fa-forward-step"></i></button>
-            <button id="playPauseBtn" class="quantum-btn" style="padding: 0.5rem 1.5rem;"><i class="fas fa-play"></i> PLAY</button>
-          </div>
+    <!-- 🌳 CENTER PANEL: VISUALIZATION NEXUS -->
+    <section class="col-span-6 bg-[#020617] relative overflow-hidden group">
+      <!-- Nexus Controls (Command Pod) -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 join command-pod p-1.5 rounded-2xl z-20 shine-hover">
+        <button id="resetStepBtn" class="btn btn-square btn-ghost btn-sm join-item btn-command" title="Reset View"><i
+            data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-white"></i></button>
+        <button id="prevStepBtn" class="btn btn-square btn-ghost btn-sm join-item btn-command" title="Previous Step"><i
+            data-lucide="chevron-left" class="w-4.5 h-4.5 text-white"></i></button>
+        <div
+          class="px-6 flex items-center font-mono font-black text-[11px] join-item min-w-[90px] justify-center bg-black/70 text-primary border-x border-white/10">
+          <span id="stepIndicator">0 / 0</span>
         </div>
-        <!-- TREE CANVAS — VIBRANT NODE COLORS + BIG FREQUENCY DISPLAY -->
-        <div class="canvas-nebula" style="padding: 1rem; background: #0a1222;">
-          <canvas id="treeCanvas" width="800" height="380" style="width:100%; height:auto; border-radius: 20px; box-shadow: 0 0 30px #002244;"></canvas>
-        </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 12px; flex-wrap: wrap; gap: 10px;">
-          <span id="treeStateMsg" style="background: #152d42; padding: 0.4rem 1.8rem; border-radius: 30px; font-weight: 600;"><i class="fas fa-info-circle"></i> ready</span>
-          <span id="mergeCountBadge" style="background: #1e3a5a; padding: 0.4rem 1.8rem; border-radius: 30px; font-weight: 600;">merges: 0</span>
+        <button id="nextStepBtn" class="btn btn-square btn-ghost btn-sm join-item btn-command" title="Next Step"><i
+            data-lucide="chevron-right" class="w-4.5 h-4.5 text-white"></i></button>
+        <button id="playPauseBtn" class="btn btn-auto-run btn-sm join-item px-8 text-[10px]">AUTO RUN</button>
+      </div>
+
+      <!-- Header Info -->
+      <div class="absolute top-8 left-8 flex gap-4 z-10 pointer-events-none">
+        <div class="premium-card p-3 px-5 rounded-2xl shine-hover">
+          <p class="text-[8px] font-black text-slate-200 uppercase mb-1 tracking-widest">Global Merges</p>
+          <h4 id="mergeCountBadge" class="text-xl font-mono font-bold text-white">0</h4>
         </div>
       </div>
+
+      <!-- Main Canvas -->
+      <div class="w-full h-full flex items-center justify-center">
+        <canvas id="treeCanvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+      </div>
+    </section>
+
+    <!-- 📊 RIGHT PANEL: ANALYTICS SUITE -->
+    <aside class="col-span-3 glass-sidebar border-l border-white/10 flex flex-col overflow-hidden">
+      <div class="p-6 flex-1 flex flex-col space-y-8 overflow-y-auto custom-scrollbar">
+
+        <!-- Performance Intelligence -->
+        <div class="space-y-4">
+          <label class="flex items-center gap-2 text-[10px] font-black text-slate-300 uppercase tracking-widest">
+            <i data-lucide="activity" class="w-3 h-3 text-primary animate-pulse"></i> Engine Intelligence
+          </label>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="premium-card p-4 rounded-2xl group hover:scale-[1.02] shine-hover">
+              <p class="text-[8px] font-black text-slate-300 uppercase mb-1">Source Bits</p>
+              <h3 id="originalBits" class="text-xl font-mono font-bold text-white transition-colors">0</h3>
+            </div>
+            <div class="premium-card p-4 rounded-2xl group hover:scale-[1.02] shine-hover">
+              <p class="text-[8px] font-black text-slate-300 uppercase mb-1">Huffman</p>
+              <h3 id="compressedBits" class="text-xl font-mono font-bold text-primary">0</h3>
+            </div>
+            <div class="premium-card p-4 rounded-2xl group hover:scale-[1.02] shine-hover">
+              <p class="text-[8px] font-black text-slate-300 uppercase mb-1">Delta</p>
+              <h3 id="savedBits" class="text-xl font-mono font-bold text-accent">0</h3>
+            </div>
+            <div class="premium-card p-4 rounded-2xl group hover:scale-[1.02] shine-hover">
+              <p class="text-[8px] font-black text-slate-300 uppercase mb-1">Efficiency</p>
+              <h3 id="compressionRatio" class="text-xl font-mono font-bold text-secondary">0%</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider opacity-10"></div>
+
+        <!-- Frequency Spectrum -->
+        <div class="space-y-4 flex-1 flex flex-col">
+          <div class="flex items-center justify-between">
+            <label class="flex items-center gap-2 text-[10px] font-black text-slate-300 uppercase tracking-widest">
+              <i data-lucide="layers" class="w-3 h-3 text-accent"></i> Symbol Spectrum
+            </label>
+            <div id="uniqueCount"
+              class="badge badge-sm badge-outline border-slate-600 text-slate-200 font-mono text-[9px] bg-slate-800">0
+            </div>
+          </div>
+          <div id="freqTableContainer" class="space-y-2 flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[200px]">
+            <div class="text-center py-10 text-slate-400 italic text-[11px] font-medium">Inject corpus for spectral
+              analysis...</div>
+          </div>
+        </div>
+
+        <!-- Bit Insights -->
+        <div class="space-y-3 pt-4">
+          <label class="flex items-center gap-2 text-[10px] font-black text-slate-300 uppercase tracking-widest">
+            <i data-lucide="search" class="w-3 h-3 text-primary"></i> Deep Analysis
+          </label>
+          <div id="detailedBitBreakdown"
+            class="p-4 bg-slate-900/80 rounded-2xl font-mono text-[10px] text-slate-300 leading-relaxed italic border border-white/10 font-medium">
+            Hover symbols for architectural insights...
+          </div>
+          <div id="bitAnalysisContainer" class="space-y-1.5 max-h-40 overflow-y-auto custom-scrollbar"></div>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- 📊 FOOTER TELEMETRY -->
+  <footer
+    class="h-10 glass-sidebar border-t border-white/10 flex items-center px-8 gap-8 text-[9px] font-black text-slate-300 uppercase tracking-[0.2em] flex-none">
+    <div class="flex items-center gap-2"><i data-lucide="type" class="w-3 h-3 text-primary"></i> <span id="charCount"
+        class="text-white">0 characters</span></div>
+    <div class="flex items-center gap-2"><i data-lucide="align-left" class="w-3 h-3 text-primary"></i> <span
+        id="wordCount" class="text-white">0 words</span></div>
+    <div class="ml-auto opacity-60 flex items-center gap-4">
+      <span class="text-white">Latency: <span class="text-primary font-bold">0.12ms</span></span>
+      <span class="text-white">Uptime: <span class="text-accent font-bold">99.9%</span></span>
+      <span class="text-slate-200 font-bold">HuffmanX Suite v3.0 // High Visibility Edition</span>
     </div>
+  </footer>
 
-    <!-- BIT-LEVEL COMPRESSION MATRIX (REAL TIME) -->
-    <div class="crystal-card" style="margin-bottom: 30px;">
-      <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-        <i class="fas fa-chart-pie" style="font-size: 2rem; color: #6fd4ff;"></i>
-        <h3 style="font-weight: 650; font-size: clamp(1.1rem, 2.5vw, 1.5rem);">📉 QUANTUM COMPRESSION METRICS · every bit visualized</h3>
-      </div>
-      <div class="bit-matrix">
-        <div class="bit-cell">
-          <i class="fas fa-weight-scale"></i> original bits
-          <div id="originalBits" class="bit-value">0</div>
-        </div>
-        <div class="bit-cell">
-          <i class="fas fa-file-zipper"></i> huffman bits
-          <div id="compressedBits" class="bit-value">0</div>
-        </div>
-        <div class="bit-cell">
-          <i class="fas fa-arrow-trend-down"></i> saved bits
-          <div id="savedBits" class="bit-value">0</div>
-        </div>
-        <div class="bit-cell">
-          <i class="fas fa-percent"></i> compression ratio
-          <div id="compressionRatio" class="bit-value">0%</div>
-        </div>
-      </div>
-      <!-- detailed per-symbol bit breakdown -->
-      <div id="detailedBitBreakdown" style="margin-top: 18px; background: #0e1c2c; border-radius: 34px; padding: 1.2rem; font-size: 0.95rem; font-family: 'JetBrains Mono';">
-        ⚡ hover on frequency rows to see bit savings
-      </div>
-    </div>
-
-    <!--  ENCODER QUANTUM + BINARY OUT -->
-    <div class="encoder-quantum">
-      <div style="display: flex; gap: 22px; align-items: center; margin-bottom: 22px; flex-wrap: wrap;">
-        <i class="fas fa-shield-hal-9000" style="font-size: 2.2rem; color: #b3e4ff;"></i>
-        <h3 style="font-weight: 700; font-size: clamp(1.1rem, 2.5vw, 1.5rem);">🔐 BINARY ENCODER · realtime huffman cipher</h3>
-      </div>
-      <div style="display: flex; gap: 18px; flex-wrap: wrap;">
-        <input type="text" id="encodeInput" placeholder="type symbol (word/char)" style="flex: 4; min-width: 200px; background: #0a1426; border: 2px solid #3e72a0; border-radius: 70px; padding: 1rem 2rem; color: white; font-size: clamp(0.9rem, 2vw, 1.2rem); font-family: 'JetBrains Mono';">
-        <button id="encodeBtn" class="quantum-btn btn-prime" style="flex: 0.8; min-width: 120px;"><i class="fas fa-crown"></i> ENCODE</button>
-        <button id="copyBtn" class="quantum-btn" style="flex: 0.5; min-width: 80px;"><i class="fas fa-copy"></i></button>
-      </div>
-      <div id="binaryOutput" class="binary-stream" style="margin-top: 22px;">
-        ⚡ _ binary code appears here _
-      </div>
-    </div>
-  </div>
-    <script src="script.js"></script>
+  <!-- Initialization -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
